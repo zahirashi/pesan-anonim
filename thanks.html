@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pesan Terkirim 💌</title>
+  <title>Pesan Terkirim 🐬💙</title>
 
   <style>
     * {
@@ -17,33 +17,42 @@
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffe5ec, #fff5f7);
-      overflow: hidden;
+
+      background:
+        linear-gradient(rgba(180, 225, 250, 0.65), rgba(180, 225, 250, 0.65)),
+        url("lumbalumba.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 20px;
     }
 
     .card {
       width: 90%;
       max-width: 450px;
-      padding: 45px 30px;
+      padding: 40px 30px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.9);
+
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(180, 100, 120, 0.2);
+
+      box-shadow: 0 15px 40px rgba(40, 120, 180, 0.25);
     }
 
-    .heart {
-      font-size: 70px;
-      animation: beat 1.2s infinite;
+    .dolphin {
+      font-size: 60px;
+      margin-bottom: 15px;
     }
 
     h1 {
-      margin: 15px 0 10px;
-      color: #d94f70;
-      font-size: 32px;
+      margin: 10px 0;
+      color: #287fbd;
+      font-size: 30px;
     }
 
     p {
-      color: #666;
+      color: #5d7180;
       font-size: 17px;
       line-height: 1.6;
     }
@@ -52,80 +61,46 @@
       display: inline-block;
       margin-top: 20px;
       padding: 13px 25px;
-      background: #e87591;
+
+      background: #4da6e8;
       color: white;
+
       text-decoration: none;
       border-radius: 30px;
       transition: 0.3s;
     }
 
     .back:hover {
-      background: #d95d7b;
+      background: #287fbd;
       transform: translateY(-2px);
-    }
-
-    @keyframes beat {
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-    }
-
-    .floating-heart {
-      position: fixed;
-      bottom: -30px;
-      font-size: 22px;
-      animation: float 6s linear infinite;
-      opacity: 0.7;
-    }
-
-    .h1 { left: 10%; animation-delay: 0s; }
-    .h2 { left: 30%; animation-delay: 2s; }
-    .h3 { left: 60%; animation-delay: 1s; }
-    .h4 { left: 85%; animation-delay: 3s; }
-
-    @keyframes float {
-      from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-
-      20% {
-        opacity: 0.7;
-      }
-
-      to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="floating-heart h1">💗</div>
-  <div class="floating-heart h2">💖</div>
-  <div class="floating-heart h3">💌</div>
-  <div class="floating-heart h4">💕</div>
-
   <div class="card">
-    <div class="heart">💌</div>
 
-    <h1>Pesanmu sudah sampai!</h1>
+    <div class="dolphin">
+      🐬🌊💙🫧
+    </div>
+
+    <h1>
+      🐬 Pesanmu sudah sampai! 🌊
+    </h1>
 
     <p>
-      Terima kasih sudah mengirim pesan.
+      Terima kasih sudah mengirim pesan. 💙
       <br>
-      Pesanmu sudah berhasil diterima dengan aman ❤️
+      Pesanmu sudah berenang sampai dengan aman. 🐬🫧
+      <br>
+      🌊🐟🐚💙
     </p>
 
     <a class="back" href="index.html">
-      ← Kirim pesan lagi
+      🐬 Kirim pesan lagi 💙
     </a>
+
   </div>
 
 </body>
