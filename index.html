@@ -68,6 +68,18 @@
       font-size: 16px;
       cursor: pointer;
     }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 15px;
+      color: #d94f70;
+      display: none;
+    }
   </style>
 </head>
 
@@ -79,19 +91,75 @@
 
     <p>Tulis pesan apa pun yang ingin kamu sampaikan.</p>
 
-    <form action="https://formspree.io/f/maeylnnr" method="POST">
+    <form
+      action="https://formspree.io/f/maeylnnr"
+      method="POST"
+      id="messageForm"
+    >
 
       <label>Nama</label>
-      <input type="text" name="nama" placeholder="Nama kamu" required>
+      <input
+        type="text"
+        name="nama"
+        placeholder="Nama kamu"
+        required
+      >
 
       <label>Pesan</label>
-      <textarea name="pesan" placeholder="Tulis pesan di sini..." required></textarea>
+      <textarea
+        name="pesan"
+        placeholder="Tulis pesan di sini..."
+        required
+      ></textarea>
 
-      <button type="submit">Kirim Pesan 💌</button>
+      <button type="submit" id="submitButton">
+        Kirim Pesan 💌
+      </button>
+
+      <div id="status">
+        Sedang mengirim pesan... 💌
+      </div>
 
     </form>
 
   </div>
+
+  <script>
+    const form = document.getElementById("messageForm");
+    const button = document.getElementById("submitButton");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      button.disabled = true;
+      button.textContent = "Mengirim... 💌";
+      status.style.display = "block";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          window.location.href = "thanks.html";
+        } else {
+          throw new Error("Gagal mengirim pesan");
+        }
+
+      } catch (error) {
+        status.textContent =
+          "Yah, pesan gagal dikirim 😢 Coba lagi ya.";
+
+        button.disabled = false;
+        button.textContent = "Kirim Pesan 💌";
+      }
+    });
+  </script>
 
 </body>
 </html>
